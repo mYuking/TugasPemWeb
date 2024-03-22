@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kalkulator Kurs Rupiah ke Dollar</title>
+</head>
+<body>
+  <h3>Kalkulator Kurs Rupiah ke Dollar</h3>
+
+  <label for="uangRupiah">Masukkan jumlah uang dalam Rupiah:</label>
+  <input type="number" id="uangRupiah">
+  <button onclick="hitungNilaiDollar()">Hitung</button>
+
+  <p id="hasil"></p>
+
+  <script>
+    function hitungNilaiDollar() {
+      const kursDollar = 14650; // nilai kurs 1 dollar dalam rupiah
+      const uangRupiah = parseFloat(document.getElementById("uangRupiah").value);
+      const nilaiDollar = uangRupiah / kursDollar;
+      
+      document.getElementById("hasil").innerText = `Jumlah uang dalam Dollar: $${nilaiDollar.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: aquamarine;
+    padding: 20px;
+    align-items: center;
+    margin: -10px;
+}
+
+header ul{
+    display: flex;
+    list-style: none;
+}
+
+header li{
+    margin: 0 15px;
+}
+
+header ul li a{
+    text-decoration: none;
+}
+

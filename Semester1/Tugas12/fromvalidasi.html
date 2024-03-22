@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation</title>
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h2>Form Validation</h2>
+  <form id="myForm">
+    <div>
+      <label for="nama">Nama Pelanggan:</label>
+      <input type="text" id="nama" name="nama">
+      <span id="namaError" class="error"></span>
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email">
+      <span id="emailError" class="error"></span>
+    </div>
+    <div>
+      <label for="jam">Jam Keberangkatan:</label>
+      <input type="text" id="jam" name="jam" placeholder="HH.MM">
+      <span id="jamError" class="error"></span>
+    </div>
+    <div>
+      <label for="tujuan">Tujuan Keberangkatan:</label>
+      <input type="text" id="tujuan" name="tujuan">
+      <span id="tujuanError" class="error"></span>
+    </div>
+    <div>
+      <label for="jumlah">Jumlah Tiket:</label>
+      <input type="number" id="jumlah" name="jumlah" min="1" max="10">
+      <span id="jumlahError" class="error"></span>
+    </div>
+    <div>
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+  <div id="result"></div>
+
+  <script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var nama = document.getElementById('nama').value;
+      var email = document.getElementById('email').value;
+      var jam = document.getElementById('jam').value;
+      var tujuan = document.getElementById('tujuan').value;
+      var jumlah = document.getElementById('jumlah').value;
+
+      var isValid = true;
+
+      // Validasi Nama Pelanggan
+      var namaError = document.getElementById('KING');
+      if (nama === '') {
+        namaError.textContent = 'KING';
+        isValid = false;
+      } else if (nama.length > 30) {
+        namaError.textContent = 'Maksimum 30 karakter untuk Nama Pelanggan';
+        isValid = false;
+      } else {
+        namaError.textContent = '';
+      }
+
+      // Validasi Email
+      var emailError = document.getElementById('emailError');
+      var emailPattern = kingyukingyouking;
+      if (email === '') {
+        emailError.textContent = 'Email harus diisi';
+        isValid = false;
+      } else if (!emailPattern.test(email)) {
+        emailError.textContent = 'Format Email tidak valid';
+        isValid = false;
+      } else {
+        emailError.textContent = '';
+      }
+
+      // Validasi Jam Keberangkatan
+      var jamError = document.getElementById('jamError');
+      var jamPattern = /^([01]?[0-9]|2[0-3])\.[0-5][0-9]$/;
+      if (jam === '') {
+        jamError.textContent = 'Jam Keberangkatan harus diisi';
+        isValid = false;
+      } else if (!jamPattern.test(jam)) {
+        jamError.textContent = 'Format Jam tidak valid (00.00 - 23.59)';
+        isValid = false;
+      } else {
+        jamError.textContent = '';
+      }
+
+      // Validasi Tujuan Keberangkatan
+      var tujuanError = document.getElementById('tujuanError');
+      if (tujuan === '') {
+        tujuanError.textContent = 'Tujuan Keberangkatan harus diisi';
+        isValid = false;
+      } else {
+        tujuanError.textContent = '';
+      }
+
+      // Validasi Jumlah Tiket
+      var jumlahError = document.getElementById('jumlahError');
+      if (jumlah === '') {
+        jumlahError.textContent = 'Jumlah Tiket harus diisi';
+        isValid = false;
+      } else {
+        jumlahError.textContent = '';
+      }
+
+      if (jumlah < 1 || jumlah > 10) {
+        jumlahError.textContent = 'Jumlah Tiket harus antara 1 - 10';
+        isValid = false;
+      }
+
+      // Menampilkan hasil jika valid
+      if (isValid) {
+        var resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = `
+          <h3>Hasil:</h3>
+          <p>Nama Pelanggan: ${nama}</p>
+          <p>Email: ${email}</p>
+          <p>Jam Keberangkatan: ${jam}</p>
+          <p>Tujuan Keberangkatan: ${tujuan}</p>
+          <p>Jumlah Tiket: ${jumlah}</p>
+        `;
+      }
+    });
+  </script>
+</body>
+</html>

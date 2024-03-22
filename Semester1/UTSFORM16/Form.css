@@ -1,0 +1,35 @@
+fieldset{
+    margin: 20;
+    padding: 20;
+}
+
+.btn-white{
+    margin-left: -20vh;
+    padding: 90;
+}
+
+table{
+    margin: 4px;
+    padding-left: 70;
+}
+
+td{
+    padding: 5px 4px;
+}
+
+button{
+    padding: 6px 10px;
+    border: 0;
+    border-radius: 4px;
+    color: rgb(26, 1, 1);
+}
+
+td{
+    padding: 3px 10px;
+}
+
+label{
+    display: block;
+    text-align: end;
+}
+
