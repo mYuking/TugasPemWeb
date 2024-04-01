@@ -25,6 +25,7 @@
             <th>Nama</th>
             <th>NIM</th>
             <th>Jurusan</th>
+            <th>Matkul</th>
             <th>Semester</th>
             <th>Aksi</th>
         </tr>
@@ -38,6 +39,7 @@
             <td> <?= $row['nama'] ?>   </td>
             <td> <?= $row['nim'] ?>   </td>
             <td> <?= $row['jurusan'] ?>   </td>
+            <td> <?= $row['matkul'] ?>   </td>
             <td> <?= $row['semester'] ?>   </td>
             <td>
                 <a href="edit.php?id=; ?>">Edit</a>
@@ -53,6 +55,7 @@
         Nama: <input type="text" name="nama" required><br>
         NIM: <input type="text" name="nim" required><br>
         Jurusan: <input type="text" name="jurusan" required><br>
+        Matkul: <input type="text" name="matkul" required><br>
         Semester: <input type="number" name="semester" required><br>
         <input type="submit" value="Tambah">
     </form>
